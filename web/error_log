@@ -1,0 +1,46 @@
+[03-Sep-2017 15:00:41 America/Buenos_Aires] PHP Fatal error:  Uncaught exception 'Twig_Error_Loader' with message 'The "/home/ipnjarorg/admin.ipnj.org.ar\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views" directory does not exist ("/home/ipnjarorg/admin.ipnj.org.ar\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views").' in /home/ipnjarorg/admin.ipnj.org.ar/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:101
+Stack trace:
+#0 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(2420): Twig_Loader_Filesystem->addPath('/home/ipnjarorg...', 'Framework')
+#1 /home/ipnjarorg/admin.ipnj.org.ar/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Container.php(305): appProdProjectContainer->getTwig_LoaderService()
+#2 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(2349): Symfony\Component\DependencyInjection\Container->get('twig.loader')
+#3 /home/ipnjarorg/admin.ipnj.org.ar/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Container.php(305): appProdProject in /home/ipnjarorg/admin.ipnj.org.ar/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 101
+[03-Sep-2017 15:00:49 America/Buenos_Aires] PHP Fatal error:  Uncaught exception 'RuntimeException' with message 'Session Storage was not able to create directory "/home/ipnjarorg/admin.ipnj.org.ar\app/../var/sessions/prod"' in /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php:293
+Stack trace:
+#0 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1824): Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler->__construct('/home/ipnjarorg...')
+#1 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php(3551): appProdProjectContainer->getSession_HandlerService()
+#2 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1854): Symfony\Component\DependencyInjection\Container->get('session.handler')
+#3 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php(3551): appProdProjectContainer->getSession_Storage_NativeService()
+#4 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1814): Symfony\Component\DependencyInjection\Container->get('session.storage...')
+ in /home/ipnjarorg/admin.ipnj.org.ar/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 101
+[03-Sep-2017 15:01:22 America/Buenos_Aires] PHP Fatal error:  Uncaught exception 'RuntimeException' with message 'Session Storage was not able to create directory "/home/ipnjarorg/admin.ipnj.org.ar\app/../var/sessions/prod"' in /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php:293
+Stack trace:
+#0 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1824): Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler->__construct('/home/ipnjarorg...')
+#1 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php(3551): appProdProjectContainer->getSession_HandlerService()
+#2 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1854): Symfony\Component\DependencyInjection\Container->get('session.handler')
+#3 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php(3551): appProdProjectContainer->getSession_Storage_NativeService()
+#4 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1814): Symfony\Component\DependencyInjection\Container->get('session.storage...')
+ in /home/ipnjarorg/admin.ipnj.org.ar/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 101
+[03-Sep-2017 15:01:25 America/Buenos_Aires] PHP Fatal error:  Uncaught exception 'RuntimeException' with message 'Session Storage was not able to create directory "/home/ipnjarorg/admin.ipnj.org.ar\app/../var/sessions/prod"' in /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php:293
+Stack trace:
+#0 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1824): Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler->__construct('/home/ipnjarorg...')
+#1 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php(3551): appProdProjectContainer->getSession_HandlerService()
+#2 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1854): Symfony\Component\DependencyInjection\Container->get('session.handler')
+#3 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php(3551): appProdProjectContainer->getSession_Storage_NativeService()
+#4 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1814): Symfony\Component\DependencyInjection\Container->get('session.storage...')
+ in /home/ipnjarorg/admin.ipnj.org.ar/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 101
+[03-Sep-2017 15:01:51 America/Buenos_Aires] PHP Fatal error:  Uncaught exception 'RuntimeException' with message 'Session Storage was not able to create directory "/home/ipnjarorg/admin.ipnj.org.ar\app/../var/sessions/prod"' in /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php:293
+Stack trace:
+#0 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1824): Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler->__construct('/home/ipnjarorg...')
+#1 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php(3551): appProdProjectContainer->getSession_HandlerService()
+#2 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1854): Symfony\Component\DependencyInjection\Container->get('session.handler')
+#3 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php(3551): appProdProjectContainer->getSession_Storage_NativeService()
+#4 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1814): Symfony\Component\DependencyInjection\Container->get('session.storage...')
+ in /home/ipnjarorg/admin.ipnj.org.ar/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 101
+[03-Sep-2017 15:05:31 America/Buenos_Aires] PHP Fatal error:  Uncaught exception 'RuntimeException' with message 'Session Storage was not able to create directory "/home/ipnjarorg/admin.ipnj.org.ar\app/../var/sessions/prod"' in /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php:293
+Stack trace:
+#0 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1824): Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler->__construct('/home/ipnjarorg...')
+#1 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php(3551): appProdProjectContainer->getSession_HandlerService()
+#2 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1854): Symfony\Component\DependencyInjection\Container->get('session.handler')
+#3 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/classes.php(3551): appProdProjectContainer->getSession_Storage_NativeService()
+#4 /home/ipnjarorg/admin.ipnj.org.ar/var/cache/prod/appProdProjectContainer.php(1814): Symfony\Component\DependencyInjection\Container->get('session.storage...')
+ in /home/ipnjarorg/admin.ipnj.org.ar/vendor/twig/twig/lib/Twig/Loader/Filesystem.php on line 101

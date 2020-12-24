@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+	<div class="main container">
+		<div class="row well">
+			{{ form_start(form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+				<div class="page-header">
+					<h2>Formulario de Envio de Detalles</h2>
+				</div>
+                
+                <div class="col-md-3">
+
+				<div class="form-group">
+			        {{ form_label(form.iglesia) }}
+			        {{ form_widget(form.iglesia, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.iglesia) }}</span>
+			        
+			    </div>
+
+				<div class="form-group">
+			        {{ form_label(form.zona) }}
+			        {{ form_widget(form.zona, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.zona) }}</span>
+			    </div>
+
+			    <div class="form-group">
+			        {{ form_label(form.anio) }}
+			        {{ form_widget(form.anio, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.anio) }}</span>
+			    </div>
+
+			    <div class="form-group">
+			        {{ form_label(form.mes) }}
+			        {{ form_widget(form.mes, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.mes) }}</span>
+			    </div>
+</div>
+<div class="col-md-3">
+			    <div class="form-group">
+			        {{ form_label(form.fecha_at) }}
+			        {{ form_widget(form.fecha_at)}}
+			        <span class="text-danger">{{ form_errors(form.fecha_at) }}</span>
+			    </div>
+
+			    <div class="form-group">
+			        {{ form_label(form.operacion) }}
+			        {{ form_widget(form.operacion, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.operacion) }}</span>
+			    </div>
+			    
+			    <div class="form-group">
+			        {{ form_label(form.cajero) }}
+			        {{ form_widget(form.cajero, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.cajero) }}</span>
+			    </div>
+</div>
+<div class="col-md-3">
+			    <div class="form-group">
+			        {{ form_label(form.aporteA) }}
+			        {{ form_widget(form.aporteA, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.aporteA) }}</span>
+			    </div>
+			    <div class="form-group">
+			        {{ form_label(form.aporteB) }}
+			        {{ form_widget(form.aporteB, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.aporteB) }}</span>
+			    </div>
+
+<div class="form-group">
+			        {{ form_label(form.total) }}
+			        {{ form_widget(form.total, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.total) }}</span><p><br /><br /></p>
+			    </div>
+
+			    
+</div>
+		    <center>
+		    	<p><br />
+		        {{ form_widget(form.save, {'label' : 'Enviar Detalle', 'attr': {'class': 'btn btn-success'}}) }}
+		    </p></center> 
+               
+        
+                {{ form_end(form) }}
+
+<script>
+    var message = ('Esta seguro?');
+    
+    function confirmAdd()
+    {
+        bootbox.confirm(message, function(result) {
+            if(result == true)
+            {
+                $('form')[0].submit();
+            }else{
+            	$('form')[0];
+            }
+
+        });
+    }
+</script>
+
+		</div>
+	</div>
+{% endblock %}

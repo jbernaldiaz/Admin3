@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+	
+	{{ include('IPNJAdminBundle:Envios:mensajes/success.html.twig') }}
+	{{ include('IPNJAdminBundle:Envios:mensajes/danger.html.twig') }}
+	<div class="container">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="page-header margin-none">
+				<h4 class="padding-none"> Detalle de la Igesia en {{ envio.iglesia }} correspondiente a {{ envio.mes }} del {{ envio.anio|date('Y') }}</h4>
+			</div>
+		    <div class="table-responsive">
+					<table class="table table-striped table-hover">
+						<tbody>
+							<tr>
+								<th>Iglesia</th>
+								<td>{{ envio.iglesia }}</td>
+								<th>Diezmo de Diezmo</th>
+								<td>{{ envio.dDiezmo }}</td>
+							</tr>
+							<tr>
+								<th>Fecha</th>
+								<td>{{ envio.fechaAt|date('d-m-Y') }}</td>
+								<th>Fondo Solidario</th>
+								<td>{{ envio.fSolidario }}</td>
+							</tr>
+							<tr>
+								<th>Mes</th>
+								<td>{{ envio.mes }}</td>
+								<th>Cuota de Socio</th>
+								<td>{{ envio.cuota }}</td>
+							</tr>
+							<tr>
+								<th>Año</th>
+								<td>{{ envio.anio|date('Y') }}</td>
+								<th>Diezmo Personal</th>
+								<td>{{ envio.dPersonal }}</td>
+							</tr>
+							<tr>
+								<th>Operación</th>
+								<td>{{ envio.operacion }}</td>
+								<th>Ofrenda Misionera</th>
+								<td>{{ envio.misionera }}</td>
+							</tr>
+							<tr>
+								<th>Cajero</th>
+								<td>{{ envio.cajero }}</td>
+								<th>Ofrenda Rayos</th>
+								<td>{{ envio.rayos }}</td>
+							</tr>
+							<tr>	
+								<th>Detalle Enviado</th>
+								<td>{{ envio.createAt|date('d-m-Y') }}</td>
+								<th>Ofrenda Gavillas</th>
+								<td>{{ envio.gavillas }}</td>
+							</tr>
+							<tr>
+								<th></th>
+								<td></td>
+								<th>F.M.N.</th>
+								<td>{{ envio.fmn }}</td>
+							</tr>
+							<tr>
+								<th></th>
+								<td></td>
+								<th>Total</th>
+								<td>{{ envio.total }}</td>
+							</tr>
+							
+						
+						
+
+						</tbody>
+					</table>
+
+			<center>
+				{% if is_granted('ROLE_USER') %}
+					<a href="{{ path('ipnj_envios_custom') }}" class="btn btn-sm btn-info">Atras</a> 
+			    {% endif %}
+			    {% if is_granted('ROLE_SUPER') %}
+					<a href="{{ path('ipnj_envios_list') }}" class="btn btn-sm btn-info">Atras</a> 
+			    {% endif %}
+			    {% if is_granted('ROLE_ADMIN') %}
+					<a href="{{ path('ipnj_envios_list') }}" class="btn btn-sm btn-info">Atras</a> 
+			    {% endif %}
+
+				<a href="{{ path('ipnj_exportar_excel', { id: envio.id }) }}" class="btn btn-sm btn-danger btn-delete">Excel</a>
+				<a href="{{ path('ipnj_recibo_pdf', { id: envio.id }) }}" class="btn btn-sm btn-primary">PDF</a>
+			</center>
+			<br />
+			<br />
+			<br />
+	</div>
+</div>
+</div>
+
+{% endblock %}

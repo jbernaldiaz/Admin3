@@ -1,0 +1,101 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ path('ipnj_admin_homepage') }}">  Administrativo  </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                {% if is_granted('ROLE_SUPER') %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  Envios   <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('ipnj_envios_zona') }}">  Envios T. Nacional  </a></li>
+                        <li><a href="{{ path('ipnj_asistencia_zona') }}">  Envios A. Social  </a></li>
+                      </ul>
+
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  Usuarios   <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('ipnj_iglesias_list') }}">  Iglesias y pastores</a></li>
+                        
+                    </ul>
+                </li>   
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  Zonas   <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('ipnj_zonas_list') }}">  Lista de Zonas  </a></li>
+                        
+                    </ul>
+                </li>  
+                
+               {% endif %}
+               {% if is_granted('ROLE_ADMIN') %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  Envios   <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('ipnj_envios_list') }}">  Envios T. Nacional  </a></li>
+                        <li><a href="{{ path('ipnj_envios_report') }}">  Reporte T. Nacional  </a></li>
+                        <li><a href="{{ path('ipnj_asistencia_list') }}">  Envios A. Social  </a></li>
+                        <li><a href="{{ path('ipnj_asistencia_report') }}">  Reporte A. Social  </a></li>
+                      </ul>
+                   
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  Usuarios   <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('ipnj_iglesias_list') }}">  Iglesias y Usuarios  </a></li>
+                        <li><a href="{{ path('ipnj_iglesias_add') }}">  Agregar Iglesia  </a></li>
+                    </ul>
+                </li>   
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  Zonas   <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('ipnj_zonas_list') }}">  Lista de Zonas  </a></li>
+                        <li><a href="{{ path('ipnj_zonas_add') }}">  Agregar Zona  </a></li>
+                    </ul>
+                </li>  
+                <li><a href="{{ path('ipnj_envios_calculator') }}">  Calculador  </a></li>
+               {% endif %}
+                {% if is_granted('ROLE_USER') %}
+            <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  ENVIOS   <span class="caret"></span></a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="{{ path('ipnj_envios_custom') }}"> Mis Envios T. Nacional </a></li>
+                    <li><a href="{{ path('ipnj_asistencia_custom') }}"> Mis Envios A. Social </a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  HACER ENVIOS   <span class="caret"></span></a>
+<ul class="dropdown-menu">
+                     <li><a href="{{ path('ipnj_envios_add') }}">  T. Nacional  </a></li>
+                     <li><a href="{{ path('ipnj_asistencia_add') }}">  A. Social  </a></li>
+
+                 </ul>
+             </li>
+                    <li><a href="{{ path('ipnj_envios_calculator') }}">  Calculador  </a></li>
+
+                {% endif %}
+            </ul>
+            
+                
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{ path('ipnj_user_logout') }}">{{ 'Salir' }}</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

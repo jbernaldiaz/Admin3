@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+	<div class="container">
+	<div class="container well">
+	    <div class="col-md-9">
+	    <h2>Iglesia o Usuario {{ iglesia.iglesia }}</h2>
+
+	        <br>
+	        <dl>
+	            <dt>Usuario</dt>
+	            <dd>
+	                {{ iglesia.username }}
+	                &nbsp;
+	            </dd>
+	            <br>
+
+	            <dt>Zona</dt>
+	            <dd>
+	                {{ iglesia.zona }}
+	                &nbsp;
+	            </dd>
+	            <br>
+
+	            <dt>{{'Role'|trans}}</dt>
+	            <dd>
+                	{% if iglesia.role == 'ROLE_ADMIN' %}
+						Administrador
+					{% elseif iglesia.role == 'ROLE_USER' %}
+						Usuario
+					{% elseif iglesia.role == 'ROLE_SUPER' %}
+						Supervisor
+                	{% endif %}
+	                &nbsp;
+	            </dd>
+
+	            <br>
+	            <dt>{{'Activo'}}</dt>
+	            <dd>
+                	{% if iglesia.isActive == 1 %}
+						<span class="text-success">Habilitado</span>
+					{% elseif iglesia.isActive == 0 %}
+						<span class="text-warning">Deshabilitado</span>
+                	{% endif %}
+	                &nbsp;
+	            </dd>
+	            <br>
+  <br>
+	    <br>         
+	          <br></dl>
+	    </div>
+{% if is_granted('ROLE_ADMIN') %}
+	    <div class="col-md-3">
+	    	<h3>{{ 'Actions'|trans }}:</h3>
+			<p>
+		    	<a href="{{ path('ipnj_iglesias_edit', { id: iglesia.id }) }}" class="btn btn-primary btn-lg btn-block">Editar Usuario </a>
+			</p>
+			<p>
+			    {{ include('IPNJAdminBundle:Iglesias:forms/form.html.twig', { form: delete_form, message: 'Esta seguro?'}) }}
+			</p>
+	    </div>
+	{% endif %}
+	</div>
+	</div>
+{% endblock %}

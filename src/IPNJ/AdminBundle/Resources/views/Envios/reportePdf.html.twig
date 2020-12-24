@@ -1,0 +1,105 @@
+{% extends 'basePdf.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+		
+
+		<div class="col-md-12">
+			<div class="page-header margin-none">
+				<h5> Envios Ofrenda {{ ofrendas }} correspondiente al {{ anio }}</h5>
+			</div>
+
+
+<div class="table-responsive">
+<table table id="t01">
+<tr>
+	<th align="center">Iglesia</th>
+	<th align="center">Ene</th>
+	<th align="center">Feb</th>
+	<th align="center">Mar</th>
+	<th align="center">Abr</th>
+	<th align="center">May</th>
+	<th align="center">Jun</th>
+	<th align="center">Jul</th>
+	<th align="center">Ago</th>
+	<th align="center">Sep</th>
+	<th align="center">Oct</th>
+	<th align="center">Nov</th>
+	<th align="center">Dic</th>
+	<th align="center">Total</th>
+</tr>
+<tr class="success">
+	<td colspan="14" align="center" style="background-color: #5E5E5E; color: #FFFFFF;"><b>{{ ofrendas }} Zona Norte</b></td>
+</tr>
+{% for enviosNorte in enviosNorte %}
+	<tr>
+	<td align="left">{{ enviosNorte.iglesia }}</td>
+	<td align="right">{{ enviosNorte.a }}</td>
+	<td align="right">{{ enviosNorte.b }}</td>
+	<td align="right">{{ enviosNorte.c }}</td>
+	<td align="right">{{ enviosNorte.d }}</td>
+	<td align="right">{{ enviosNorte.e }}</td>
+	<td align="right">{{ enviosNorte.f }}</td>
+	<td align="right">{{ enviosNorte.g }}</td>
+	<td align="right">{{ enviosNorte.h }}</td>
+	<td align="right">{{ enviosNorte.i }}</td>
+	<td align="right">{{ enviosNorte.j }}</td>
+	<td align="right">{{ enviosNorte.k }}</td>
+	<td align="right">{{ enviosNorte.l }}</td>
+	<td align="right">{{ enviosNorte.a + enviosNorte.b + enviosNorte.c + enviosNorte.d + enviosNorte.e + enviosNorte.f + enviosNorte.g + enviosNorte.h + enviosNorte.i + enviosNorte.j + enviosNorte.k + enviosNorte.l }}</td>
+	
+</tr>
+<tr class="success">
+	<td colspan="14" align="center" style="background-color: #5E5E5E; color: #FFFFFF;"><b>{{ ofrendas }} Zona Centro</b></td>
+</tr>
+{% endfor %}
+{% for enviosCentro in enviosCentro %}
+	<tr>
+	<td align="left">{{ enviosCentro.iglesia }}</td>
+	<td align="right">{{ enviosCentro.a }}</td>
+	<td align="right">{{ enviosCentro.b }}</td>
+	<td align="right">{{ enviosCentro.c }}</td>
+	<td align="right">{{ enviosCentro.d }}</td>
+	<td align="right">{{ enviosCentro.e }}</td>
+	<td align="right">{{ enviosCentro.f }}</td>
+	<td align="right">{{ enviosCentro.g }}</td>
+	<td align="right">{{ enviosCentro.h }}</td>
+	<td align="right">{{ enviosCentro.i }}</td>
+	<td align="right">{{ enviosCentro.j }}</td>
+	<td align="right">{{ enviosCentro.k }}</td>
+	<td align="right">{{ enviosCentro.l }}</td>
+	<td align="right">{{ enviosCentro.a + enviosCentro.b + enviosCentro.c + enviosCentro.d + enviosCentro.e + enviosCentro.f + enviosCentro.g + enviosCentro.h + enviosCentro.i + enviosCentro.j + enviosCentro.k + enviosCentro.l }}</td>
+</tr>
+
+{% endfor %}
+<tr class="success">
+	<td colspan="14" align="center" style="background-color: #5E5E5E; color: #FFFFFF;"><b>{{ ofrendas }} Zona Sur</b></td>
+</tr>
+
+{% for enviosSur in enviosSur %}
+	<tr>
+	<td align="left">{{ enviosSur.iglesia }}</td>
+	<td align="right">{{ enviosSur.a }}</td>
+	<td align="right">{{ enviosSur.b }}</td>
+	<td align="right">{{ enviosSur.c }}</td>
+	<td align="right">{{ enviosSur.d }}</td>
+	<td align="right">{{ enviosSur.e }}</td>
+	<td align="right">{{ enviosSur.f }}</td>
+	<td align="right">{{ enviosSur.g }}</td>
+	<td align="right">{{ enviosSur.h }}</td>
+	<td align="right">{{ enviosSur.i }}</td>
+	<td align="right">{{ enviosSur.j }}</td>
+	<td align="right">{{ enviosSur.k }}</td>
+	<td align="right">{{ enviosSur.l }}</td>
+	<td align="right">{{ enviosSur.a + enviosSur.b + enviosSur.c + enviosSur.d + enviosSur.e + enviosSur.f + enviosSur.g + enviosSur.h + enviosSur.i + enviosSur.j + enviosSur.k + enviosSur.l }}</td>
+</tr>
+
+{% endfor %}
+</table>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

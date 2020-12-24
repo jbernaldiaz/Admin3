@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+	<div class="main container">
+		<div class="row well">
+			{{ form_start(form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+				
+                <div class="col-md-3">
+
+
+			    <div class="form-group">
+			        {{ form_label(form.diezmo) }}
+			        {{ form_widget(form.diezmo, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.diezmo) }}</span>
+			    </div>
+
+			    <div class="form-group">
+			        {{ form_label(form.local) }}
+			        {{ form_widget(form.local, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.local) }}</span>
+			    </div>
+    			
+    			<div class="form-group">
+			        {{ form_label(form.cuota) }}
+			        {{ form_widget(form.cuota, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.cuota) }}</span>
+			    </div>
+			    
+
+		    <center>
+		    	<p><br />
+		        {{ form_widget(form.send, {'label' : 'Consultar', 'attr': {'class': 'btn btn-success'}}) }}
+		    </p></center> 
+</div>               
+        
+                {{ form_end(form) }}
+			
+		</div>
+	</div>
+{% endblock %}

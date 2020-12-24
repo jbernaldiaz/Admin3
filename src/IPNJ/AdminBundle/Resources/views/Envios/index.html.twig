@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+
+	{{ include('IPNJAdminBundle:Envios:mensajes/success.html.twig') }}
+	{{ include('IPNJAdminBundle:Envios:mensajes/danger.html.twig') }}
+<div class="container">
+				<div class="row well">
+
+		<div class="col-md-12">
+			<div class="page-header margin-none">
+				<h2 class="padding-none"> IGLESIAS</h2>
+			</div>
+
+
+
+
+			<div class="table-responsive">
+				<p>Total records: <span id="total">{{ pagination.getTotalItemCount }}</span>
+				</p>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>{{ knp_pagination_sortable(pagination, 'No.', 'u.id') }}</th>
+							<th>{{ knp_pagination_sortable(pagination, 'Iglesia', 'u.envio') }}</th>
+							{#<th>Iglesia</th>#}
+							<th>Fecha</th>
+							{#<th>{{ knp_pagination_sortable(pagination, 'Fecha', 'u.fechaAt') }}</th>#}
+							<th>{{ knp_pagination_sortable(pagination, 'Mes', 'u.mes') }}</th>
+							<th>{{ knp_pagination_sortable(pagination, 'Año', 'u.anio') }}</th>
+							<th>{{ knp_pagination_sortable(pagination, 'Operacion', 'u.operacion') }}</th>
+							<th>{{ knp_pagination_sortable(pagination, 'Cajero', 'u.cajero') }}</th>
+							<th>{{ knp_pagination_sortable(pagination, 'Total', 'u.total') }}</th>
+							<th>{{ knp_pagination_sortable(pagination, 'Reportado', 'u.createAt') }}</th>
+							<th>Acciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for envio in pagination %}
+
+						<tr>
+							<td>{{ envio.id }}</td>
+							<td>{{ envio.iglesia }}</td>
+							<td>{{ envio.fechaAt|date('d-m-Y') }}</td>
+							<td>{{ envio.mes }}</td>
+							<td>{{ envio.anio|date('Y') }}</td>
+							<td>{{ envio.operacion }}</td>
+							<td>{{ envio.cajero }}</td>
+							<td>{{ envio.total }}</td>
+							<td>{{ envio.createAt|date('d-m-Y  -  H:i') }}</td>
+
+								<td class="action">
+									<a href="{{ path('ipnj_envios_view', { id: envio.id }) }}" class="btn btn-sm btn-info">Ver</a>
+									<a href="{{ path('ipnj_envios_edit', { id: envio.id }) }}" class="btn btn-sm btn-danger">Editar</a>
+								<a href="{{ path('ipnj_exportar_excel', { id: envio.id }) }}" class="btn btn-sm  btn-success">Excel</a>
+								
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<div class="navigation">
+					{{ knp_pagination_render(pagination) }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

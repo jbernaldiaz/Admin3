@@ -1,0 +1,215 @@
+ipnj_admin_homepage:
+    path:     /ingreso
+    defaults: { _controller: IPNJAdminBundle:Default:index }
+
+# rutas de envios
+ipnj_envios_list:
+    path:     envios/list
+    defaults: { _controller: IPNJAdminBundle:Envios:index }
+
+ipnj_envios_add:
+    path:     envios/add
+    defaults: { _controller: IPNJAdminBundle:Envios:add }
+
+ipnj_envios_create:
+    path:     envios/create
+    defaults: { _controller: IPNJAdminBundle:Envios:create }
+    methods:  POST
+
+ipnj_envios_edit:
+    path:     envios/edit/{id}
+    defaults: { _controller: IPNJAdminBundle:Envios:edit }
+
+ipnj_envios_update:
+    path:     envios/update/{id}
+    defaults: { _controller: IPNJAdminBundle:Envios:update }
+    methods:  [POST, PUT]
+
+
+
+ipnj_envios_view:
+    path:     /view/{id}
+    defaults: { _controller: IPNJAdminBundle:Envios:view }
+
+ipnj_envios_custom:
+    path:     envios/custom
+    defaults: { _controller: IPNJAdminBundle:Envios:custom }
+
+ipnj_envios_zona:
+    path:     envios/zona
+    defaults: { _controller: IPNJAdminBundle:Envios:zona }
+
+ipnj_envios_gavillas:
+    path:     envios/gavillas
+    defaults: { _controller: IPNJAdminBundle:Envios:gavillas }
+
+ipnj_envios_rayos:
+    path:     envios/rayos
+    defaults: { _controller: IPNJAdminBundle:Envios:rayos }
+
+ipnj_envios_report:
+    path:     envios/report
+    defaults: { _controller: IPNJAdminBundle:Envios:report }
+
+# rutas de iglesias
+ipnj_iglesias_list:
+    path:     /iglesias/list
+    defaults: { _controller: IPNJAdminBundle:Iglesias:index }
+    
+ipnj_iglesias_add:
+    path:     iglesias/add
+    defaults: { _controller: IPNJAdminBundle:Iglesias:add }
+    
+ipnj_iglesias_create:
+    path:     iglesias/create
+    defaults: { _controller: IPNJAdminBundle:Iglesias:create }
+    methods:  POST
+
+ipnj_iglesias_edit:
+    path:     /edit/{id}
+    defaults: { _controller: IPNJAdminBundle:Iglesias:edit }
+
+ipnj_iglesias_update:
+    path:     /update/{id}
+    defaults: { _controller: IPNJAdminBundle:Iglesias:update }
+    methods:  [POST, PUT]
+
+ipnj_iglesias_view:
+    path:     iglesias/view/{id}
+    defaults: { _controller: IPNJAdminBundle:Iglesias:view }
+    
+ipnj_iglesias_delete:
+    path:     /delete/{id}
+    defaults: { _controller: IPNJAdminBundle:Iglesias:delete }
+    methods:  [POST, DELETE]
+
+
+# rutas de Zonas
+ipnj_zonas_list:
+    path:     /zonas/list
+    defaults: { _controller: IPNJAdminBundle:Zonas:index }
+    
+ipnj_zonas_add:
+    path:     zonas/add
+    defaults: { _controller: IPNJAdminBundle:Zonas:add }
+    
+ipnj_zonas_create:
+    path:     zonas/create
+    defaults: { _controller: IPNJAdminBundle:Zonas:create }
+    methods:  POST
+
+
+# Ruta de exportacion pdf - excel
+ipnj_exportar_excel:
+    path:     exportar/excel/{id}
+    defaults: { _controller: IPNJAdminBundle:Excel:excel }
+
+ipnj_recibo_pdf:
+    path:     exportar/pdf/{id}
+    defaults: { _controller: IPNJAdminBundle:Excel:reciboPdf }
+
+ipnj_report_excel:
+    path:     report/excel/{ofrenda}/{anio}
+    defaults: { _controller: IPNJAdminBundle:Excel:reportExcel }
+
+ipnj_report_pdf:
+    path:     report/pdf/{ofrenda}/{anio}
+    defaults: { _controller: IPNJAdminBundle:Excel:reportPdf }
+
+
+
+
+ipnj_asistencia_excel:
+    path:     asistencia/excel/{id}
+    defaults: { _controller: IPNJAdminBundle:Excel:asistenciaExcel }
+
+ipnj_recibo_asistencia_pdf:
+    path:     asistencia/pdf/{id}
+    defaults: { _controller: IPNJAdminBundle:Excel:asistenciaReciboPdf }
+
+ipnj_report_asistencia_excel:
+    path:     asistencia/report/excel/{aporte}/{anio}
+    defaults: { _controller: IPNJAdminBundle:Excel:asistenciaReportExcel }
+
+ipnj_report_asistencia_pdf:
+    path:     asistencia/report/pdf/{aporte}/{anio}
+    defaults: { _controller: IPNJAdminBundle:Excel:asistenciaReportPdf }
+
+
+
+
+
+
+
+
+#Rutas de seguridad
+
+ipnj_user_homepage:
+    path:     /
+    defaults: { _controller: IPNJAdminBundle:Default:index }
+
+ipnj_envios_calculator:
+    path:     envios/calculator
+    defaults: { _controller: IPNJAdminBundle:Default:calculator }
+
+ipnj_user_login:
+    path:     /login
+    defaults: { _controller: IPNJAdminBundle:Security:login }
+
+ipnj_user_login_check:
+    path:     /login_check
+    defaults: { _controller: IPNJAdminBundle:Security:loginCheck }
+
+ipnj_user_logout:
+    path:     /logout
+
+
+
+# rutas de asistencia
+ipnj_asistencia_list:
+    path:     asistencia/list
+    defaults: { _controller: IPNJAdminBundle:Asistencia:index }
+
+ipnj_asistencia_add:
+    path:     asistencia/add
+    defaults: { _controller: IPNJAdminBundle:Asistencia:add }
+
+ipnj_asistencia_create:
+    path:     asistencia/create
+    defaults: { _controller: IPNJAdminBundle:Asistencia:create }
+    methods:  POST
+
+ipnj_asistencia_edit:
+    path:     asistencia/edit/{id}
+    defaults: { _controller: IPNJAdminBundle:Asistencia:edit }
+
+ipnj_asistencia_update:
+    path:     asistencia/update/{id}
+    defaults: { _controller: IPNJAdminBundle:Asistencia:update }
+    methods:  [POST, PUT]
+
+
+
+ipnj_asistencia_view:
+    path:     asistencia/view/{id}
+    defaults: { _controller: IPNJAdminBundle:Asistencia:view }
+
+ipnj_asistencia_custom:
+    path:     asistencia/custom
+    defaults: { _controller: IPNJAdminBundle:Asistencia:custom }
+
+ipnj_asistencia_zona:
+    path:     asistencia/zona
+    defaults: { _controller: IPNJAdminBundle:Asistencia:zona }
+
+ipnj_asistencia_gavillas:
+    path:     asistencia/gavillas
+    defaults: { _controller: IPNJAdminBundle:Asistencia:gavillas }
+
+ipnj_asistencia_rayos:
+    path:     asistencia/rayos
+    defaults: { _controller: IPNJAdminBundle:Asistencia:rayos }
+
+ipnj_asistencia_report:
+    path:     asistencia/report
+    defaults: { _controller: IPNJAdminBundle:Asistencia:report }

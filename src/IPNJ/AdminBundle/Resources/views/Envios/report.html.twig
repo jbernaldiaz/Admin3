@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+	<div class="main container">
+		<div class="row well">
+			{{ form_start(form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+				
+                <div class="col-md-3">
+
+
+			    <div class="form-group">
+			        {{ form_label(form.ofrenda) }}
+			        {{ form_widget(form.ofrenda, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.ofrenda) }}</span>
+			    </div>
+
+			    <div class="form-group">
+			        {{ form_label(form.anio) }}
+			        {{ form_widget(form.anio|date('Y'), {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.anio) }}</span>
+			    </div>
+
+			    
+
+		    <center>
+		    	<p><br />
+		        {{ form_widget(form.save, {'label' : 'Consultar', 'attr': {'class': 'btn btn-success'}}) }}
+		    </p></center> 
+</div>               
+        
+                {{ form_end(form) }}
+			
+		</div>
+	</div>
+{% endblock %}

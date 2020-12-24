@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+	<div class="main container">
+		<div class="row well">
+			{{ form_start(form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+				<div class="page-header">
+					<h2>Agregar Zona</h2>
+				</div>
+                
+            <div class="col-md-3">
+
+				<div class="form-group">
+			       {{ form_label(form.zona) }}
+			        {{ form_widget(form.zona, {'attr': {'class': 'form-control', 'placeholder' : 'Nueva Registro de Zona'}}) }}
+			        <span class="text-danger">{{ form_errors(form.zona) }}</span>
+			    </div>
+
+				
+		    <p><br />
+		    	<a href="{{ path('ipnj_iglesias_list') }}" class="btn btn-sm btn-info">Regresar</a>
+		        {{ form_widget(form.save, {'label' : 'Agregar Zona', 'attr': {'class': 'btn btn-success'}}) }}
+		    </p>
+			</div>
+        
+                {{ form_end(form) }}
+			
+		</div>
+	</div>
+{% endblock %}

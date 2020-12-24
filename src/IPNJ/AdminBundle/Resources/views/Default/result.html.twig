@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+
+	{{ include('IPNJAdminBundle:Envios:mensajes/success.html.twig') }}
+	{{ include('IPNJAdminBundle:Envios:mensajes/danger.html.twig') }}
+<div class="container">
+				<div class="row well">
+
+		<div class="col-md-4 col-md-offset-4">
+			<div class="page-header margin-none">
+				<h3 class="padding-none"> Resultado
+				</h3>
+			</div>
+
+
+<div class="table-responsive">
+<center>
+	<table class="table table-striped table-hover">
+		<thead>
+ <tr>
+<th align= "center">Descripción</th>
+<th align= "center">Cantidad</th>
+</tr>
+</thead>
+   <tr>
+     <td>El Diezmo del mes es</td> 
+     <td align= "right">$  {{ diezmo }}</td>
+   </tr>
+   <tr> 
+    <td>Diezmo de Diezmo:</td> 
+    <td align= "right">$  {{ dDiezmo }}</td>
+   </tr>
+   <tr>
+    <td>Aporte Voluntario 1:</td>
+    <td align= "right">$  {{ aporteA }}</td>
+   </tr>
+   <tr>
+    <td>Fondo Solidario:</td>
+    <td align= "right">$  {{ solidario }}</td>
+   </tr>
+    <td>Donacion al Fondo Local:</td> 
+    <td align= "right">$  {{ fLocal }}</td></tr>
+   <tr> 
+    <td>Cuota de Socio:</td> 
+    <td align= "right">$  {{ cuota }}</td>
+  </tr>
+    
+ 
+</table>
+    <br/>
+       </center>
+</div>
+</div>
+<div class="col-md-6 col-md-offset-3">
+<br/>
+      <center><h4>Total de envios al Fondo Nacional: $  {{ totalNacional }} <br/>
+      Total envios al Fondo de Asistencia Social:$  {{ aporteA }}<br/>
+      Total Donacion al pastor: $  {{ totalPastor }}</h4></center>
+    </div>
+
+
+</div>
+    
+</div>
+
+{% endblock %}

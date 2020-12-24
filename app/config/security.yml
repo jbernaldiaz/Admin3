@@ -1,0 +1,62 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+         our_db_provider:
+                    entity:
+                        class: IPNJAdminBundle:Iglesias
+                        property: username
+
+    firewalls:
+        default:
+            anonymous: ~
+            http_basic: ~
+            form_login:
+                login_path: /login
+                check_path: /login_check
+                # field names for the username and password fields:
+                username_parameter: _username
+                password_parameter: _password
+                # default_target_path: default_security_target
+                # always_use_default_target_path: true
+            logout:
+                path:   /logout
+                target: /login
+
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            #http_basic: ~
+
+            # https://symfony.com/doc/current/security/form_login_setup.html
+            #form_login: ~
+
+
+    encoders:
+        IPNJ\AdminBundle\Entity\Iglesias:
+            algorithm: bcrypt
+            cost: 12
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/$, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/iglesias/list, roles: [ROLE_ADMIN, ROLE_SUPER] }
+        - { path: ^/iglesias/view, roles: [ROLE_ADMIN, ROLE_SUPER] }
+        - { path: ^/iglesias/add, roles: [ROLE_ADMIN] }
+        - { path: ^/envios/report, roles: [ROLE_ADMIN] }
+        - { path: ^/envios/reporte, roles: [ROLE_ADMIN] }
+        - { path: ^/envios/list, roles: [ROLE_ADMIN, ROLE_SUPER] }
+        - { path: ^/envios/zona, roles: [ROLE_SUPER] }
+        - { path: ^/envios/custom, roles: [ROLE_USER] }
+        - { path: ^/envios/add, roles: [ROLE_USER] }
+        - { path: ^/zonas/add, roles: [ROLE_ADMIN] }
+        - { path: ^/zonas/list, roles: [ROLE_ADMIN, ROLE_SUPER] }
